@@ -59,7 +59,7 @@ Player.prototype.renderVictories = function() {
     ctx.clearRect(0,0, 450, 50);
     ctx.font = "30px Arial";
     ctx.fillStyle = "black";
-    ctx.fillText(this.numberOfVictories,420,40);
+    ctx.fillText(this.numberOfVictories,415,40);
     ctx.drawImage(Resources.get('images/littlestar.png'), 450, 0);
 }
 
@@ -68,10 +68,10 @@ Player.prototype.checkVictory = function() {
     if (this.y === -12) {
         ctx.clearRect(420,40, 50, 5);
         this.numberOfVictories += 1;      
-        setTimeout(function(){ 
-            player.resetPosition(); 
+        var self = this;
+        setTimeout( function() { 
+            self.resetPosition(); 
         }, 100);
-        
     }
 }
 
