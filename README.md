@@ -4,7 +4,7 @@ This project is a variation of the classic Frogger arcade game.
 
 Demo
 ------------
-  [Click here](https://google.com) to play the game.
+  [Click here](https://carolinass.github.io/frontend-nanodegree-arcade-game/) to play the game.
 
 How to play?
 ------------
