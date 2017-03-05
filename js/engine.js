@@ -97,6 +97,7 @@ var Engine = (function(global) {
         player.update();
     }
 
+    //Function to check collisions between an enemy and the player
     function checkCollisions() {
         allEnemies.forEach(function(enemy){
             if ( Math.ceil(enemy.x) >= Math.ceil(player.x) - 60 && 
@@ -147,7 +148,11 @@ var Engine = (function(global) {
             }
         }
 
-        renderEntities();
+        if (typeof playerSelector.selectedPlayer !== "undefined") {
+            renderEntities();
+        } else {
+            renderPlayerSelector();
+        }
     }
 
     /* This function is called by the render function and is called on each game
@@ -163,6 +168,16 @@ var Engine = (function(global) {
         });
 
         player.render();
+    }
+
+    //Draw possible players on screen
+    function renderPlayerSelector() {
+        var cont = 0;
+        playerSelector.render();
+        for (var i = 0; i < allPlayers.length; i++) {
+            ctx.drawImage(Resources.get(allPlayers[i]), cont, 125);
+            cont += 100;
+        }
     }
 
     /* This function does nothing but it could have been a good place to
@@ -182,7 +197,13 @@ var Engine = (function(global) {
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/char-boy.png',
+        'images/char-cat-girl.png',
+        'images/char-horn-girl.png',
+        'images/char-pink-girl.png',
+        'images/char-princess-girl.png',
+        'images/Selector.png',
+        'images/littlestar.png'
     ]);
     Resources.onReady(init);
 
