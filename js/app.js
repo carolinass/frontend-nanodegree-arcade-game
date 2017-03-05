@@ -23,7 +23,7 @@ Enemy.prototype.getRandomInt = function(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
-}
+};
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
@@ -61,7 +61,7 @@ Player.prototype.renderVictories = function() {
     ctx.fillStyle = "black";
     ctx.fillText(this.numberOfVictories,415,40);
     ctx.drawImage(Resources.get('images/littlestar.png'), 450, 0);
-}
+};
 
 // Function to check if the player won the game
 Player.prototype.checkVictory = function() {
@@ -73,7 +73,7 @@ Player.prototype.checkVictory = function() {
             self.resetPosition(); 
         }, 100);
     }
-}
+};
 
 // Draw the player on the screen
 Player.prototype.render = function() {
@@ -113,7 +113,7 @@ Player.prototype.update = function() {
 Player.prototype.resetPosition = function() {
     this.x = 200;
     this.y = 403;
-}
+};
 
 // Our player selector
 var PlayerSelector = function() {
@@ -129,12 +129,12 @@ var PlayerSelector = function() {
         300 : 'images/char-pink-girl.png',
         400 : 'images/char-princess-girl.png'
     }
-}
+};
 
 // Draw the player selector on screen
 PlayerSelector.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 // Handle keyboard input 
 PlayerSelector.prototype.handleInput = function(key) {
@@ -149,13 +149,13 @@ PlayerSelector.prototype.handleInput = function(key) {
     } else if (key === "enter") {
         this.pickPlayer(this.x);
     }
-}
+};
 
 // Select player
 PlayerSelector.prototype.pickPlayer = function(x) {
     this.selectedPlayer = this.players[x];
     player.sprite = this.selectedPlayer;
-}
+};
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
@@ -167,7 +167,7 @@ var createEnemies = function(quantity) {
         var speed = Math.floor(Math.random() * (300 - 100)) + 100;
         allEnemies.push(new Enemy(speed));
     }
-}
+};
 
 createEnemies(3);
 
