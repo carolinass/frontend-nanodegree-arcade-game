@@ -1,8 +1,5 @@
 Front-End Nanodegree Arcade Game
 ================================
-
-What is it?
-------------
 This project is a variation of the classic Frogger arcade game.
 
 Demo
